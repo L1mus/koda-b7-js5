@@ -5,14 +5,14 @@ const account = {
 }
 
 function updateAcc (newPass){
-  if(newPass.length < 12){
+  if(newPass.length < 5){
     console.log(`Password anda minimal 12 karakter`)
   }
   const updated ={
     ...account,
     password:newPass
   }
-  cutPassword = updated.password.slice(-3)
+  let cutPassword = updated.password.slice(-3)
   let sensorPassword = updated.password.slice(0,updated.password.length-3).replace(/[a-z0-9]/g,"*")
   console.log(sensorPassword)
   return console.log(`
